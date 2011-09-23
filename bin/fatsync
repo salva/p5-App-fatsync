@@ -1,0 +1,14 @@
+#!/usr/bin/perl
+
+use strict;
+use warnings;
+
+use App::fatsync;
+
+@ARGV == 2 or die "Usage:\n  $0 src dst\n\n";
+my ($src, $dst) = @ARGV;
+
+my $fs = App::fatsync->new();
+$fs->{debug} = 1;
+$fs->fatsync($src, $dst);
+
